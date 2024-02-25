@@ -1,0 +1,32 @@
+.option{
+    height: 325px;
+    width: 1267px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 50px;
+    div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 305px;
+        height: 117px;
+
+        img{
+            width: 111px;
+            height: 111px;
+        }
+        h1{
+            font-size: 30px;
+            color: black;
+            text-align: center;
+        }
+        h3{
+            font-size: 24px;
+            color: #9D9D9D;
+            text-align: center;
+        }
+    }
+}

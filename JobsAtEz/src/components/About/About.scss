@@ -1,0 +1,30 @@
+.about{
+    padding-top: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+.left{
+    width:666px;
+    height: 587px;
+}
+.right{
+    display: flex;
+    flex-direction: column;
+    width: 516px;
+    height: 510px;
+    
+    h1{
+        font-size: 56px;
+        text-align: end;
+        span{
+            color:#1E88E5;
+        }
+    }
+    h3{
+        font-size: 24px;
+        text-align: end;
+    }
+
+}

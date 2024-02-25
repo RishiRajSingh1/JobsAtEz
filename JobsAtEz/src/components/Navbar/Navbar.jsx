@@ -1,21 +1,26 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
+import './Navbar.scss'
 
 const Navbar = () => {
   return (
-    <>
+    
     <div className="navbar">
-    <div className="logo">
-        <h1>Logo</h1>
+        <img src='../../../public/images/logo.png'/>
+        <div className='links'>
+        <Link to ="/Home">Home</Link>
+        <Link to ="/FindWork">Find Work</Link>
+        <Link to ="/FindFreelancer"> Find Freelancer</Link>
+        <Link to ="/login">Log In</Link>
+        <Link to ="/signup">Sign Up</Link>
+        <button>Post A Project</button>
+
+        </div>
+    
     </div>
-    <div className="content">
-        <a href="">About</a>
-        <a href="">Contact</a>
-        <a href="">Explore</a>
-        <a href="">Join</a>
-    </div>
-    </div>
-    </>
+
+    
   )
 }
 
-export default Navbar
+export default Navbar;
