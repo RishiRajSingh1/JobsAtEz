@@ -1,0 +1,41 @@
+.subscribe{
+    width: 1512px;
+    height: 561px;
+    background-color: #13062A;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+
+    h1{
+        font-size: 56px;
+        color: white;
+        margin: 15px;
+        margin-top: 50px;
+        
+    }
+    h3{
+        font-size: 24px;
+        color: white;
+        margin: 35px;
+       
+
+    }
+    input{
+        font-size: 24px;
+        width: 662px;
+        height: 76px;
+        margin: 35px;
+        border-radius: 50px;
+        text-align: center;
+    }
+    button{
+        background-color: #1E88E5;
+        color: white;
+        width: 300px;
+        height: 76px;
+        margin-top: 35px;
+    }
+}
