@@ -1,12 +1,12 @@
 import React from 'react'
-import Navbar from '../Navbar/Navbar'
+import Navbar from '../../components/Navbar/Navbar'
 import './Home.scss'
-import Banner from '../Banner/Banner'
-import Options from '../Options/Options'
-import About from '../About/About'
-import CategoryCard from '../CategoryCard/CategoryCard'
-import { Footer } from '../Footer/Footer'
-import Subscribe from '../NewsSubscription/Subscribe'
+import Banner from '../../components/Banner/Banner'
+import Options from '../../components/Options/Options'
+import About from '../../components/About/About'
+import CategoryCard from '../../components/CategoryCard/CategoryCard'
+import { Footer } from '../../components/Footer/Footer'
+import Subscribe from '../../components/NewsSubscription/Subscribe'
 
 const Home = () => {
   return (
