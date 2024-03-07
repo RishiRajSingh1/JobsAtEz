@@ -1,0 +1,9 @@
+.container{
+    width: 285px;
+    height: 241px;
+}
+.container:hover{
+    transition-duration: 150ms;
+    transition-timing-function: ease-in-out;
+    transform: scale(1.06);
+}

@@ -1,0 +1,41 @@
+.banner{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5%;
+    .left{
+        .textbox{
+            color: white;
+            width: 634px;
+            height: 285px;
+            h1{
+                font-size: 65px;
+                font-weight: bold;
+            }
+            h3{
+                font-size: 24px;
+                
+            }
+
+        }
+        .buttons{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            input{
+                width:420px;
+                height:70px;
+            }
+            button{
+                background-color: #1E88E5;
+                width: 250px;
+                height: 76px;
+                color: white;
+            }
+        }
+    }
+    .right{
+        width: 638px;
+        height: 600px;
+    }
+}
