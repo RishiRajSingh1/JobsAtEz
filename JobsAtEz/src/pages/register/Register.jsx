@@ -73,10 +73,9 @@ function Register() {
             placeholder="India"
             onChange={handleChange}
           />
-          <button type="submit">Register</button>
+          
         </div>
         <div className="right">
-          <h1>Activate Your seller account</h1>
           <div className="toggle">
             <label htmlFor="">Activate Your seller account</label>
             <label className="switch">
@@ -100,6 +99,7 @@ function Register() {
             rows="10"
             onChange={handleChange}
           ></textarea>
+          <button type="submit">Register</button>
         </div>
       </form>
     </div>

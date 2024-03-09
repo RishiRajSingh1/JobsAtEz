@@ -3,22 +3,28 @@ import Home from './pages/Home/Home'
 import Login from './pages/Login/Login'
 import './App.css'
 import Register from './pages/register/Register'
+import { QueryClient, QueryClientProvider } from 'react-query';
+import AddGig from './pages/AddGig/AddGig'
+
 // import Carousel from './components/Slider/Carousel'
 
 function App() {
 
+  const queryClient = new QueryClient();
+
   return (
     <>
+    <QueryClientProvider client={queryClient}>
     <Router>
       <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="/FindWork" element={<div>Home</div>}/>
-        <Route path="/FindFreelancer" element={<div>Home</div>}/>
+        <Route  path="/gigs" element= {<></>}/>
+        <Route path="/addGig" element={<AddGig/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/register" element={<Register/>}/>
       </Routes>
     </Router>
-   
+    </QueryClientProvider>
     </>
   )
 }

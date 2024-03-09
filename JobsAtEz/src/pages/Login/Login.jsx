@@ -23,6 +23,8 @@ function Login() {
 
   return (
     <div className="login">
+      <div  className="right">
+        <img src="../../../public/images/Login.png" alt="" /></div>
       <form onSubmit={handleSubmit}>
         <h1>Sign in</h1>
         <label htmlFor="">Username</label>
@@ -41,6 +43,7 @@ function Login() {
         />
         <button type="submit">Login</button>
         {error && error}
+        <h3>Sign up  to create  a new user or seller  account  </h3>
       </form>
     </div>
   );
