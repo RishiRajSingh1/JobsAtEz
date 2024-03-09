@@ -39,6 +39,7 @@ function Login() {
         <input
           name="password"
           type="password"
+          placeholder="password"
           onChange={(e) => setPassword(e.target.value)}
         />
         <button type="submit">Login</button>
