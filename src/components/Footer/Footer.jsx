@@ -25,8 +25,8 @@ export const Footer = () => {
         <div className="sec4">
             <h3>Call Us</h3>
             <p>India</p>
-            <p>+91 6204827820</p>
-            <p>rishisinghrajputr2gmail.com</p>
+            <p>+91 9887451255</p>
+            <p>jobsatez@org.in</p>
         </div>
      </div>
      <h3>2024 JobAtEz. All right reserved</h3>
