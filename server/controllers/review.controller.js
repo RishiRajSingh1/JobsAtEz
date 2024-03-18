@@ -24,8 +24,6 @@ export const createReview = async (req, res, next) => {
         createError(403, "You have already created a review for this gig!")
       );
 
-    //TODO: check if the user purchased the gig.
-
     const savedReview = await newReview.save();
 
     await Gig.findByIdAndUpdate(req.body.gigId, {
@@ -45,6 +43,7 @@ export const getReviews = async (req, res, next) => {
     next(err);
   }
 };
+
 export const deleteReview = async (req, res, next) => {
   try {
     const review = await Review.findById(req.params.id);

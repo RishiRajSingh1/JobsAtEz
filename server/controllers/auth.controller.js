@@ -21,11 +21,18 @@ export const login = async (req, res, next) => {
   try {
     const user = await User.findOne({ username: req.body.username });
 
-    if (!user) return next(createError(404, "User not found!"));
+    if (!user) {
+      return next(createError(404, "User not found!"));
+    }
+
+    if (!user.isActive) {
+      return next(createError(403, "This account has been deactivated."));
+    }
 
     const isCorrect = bcrypt.compareSync(req.body.password, user.password);
-    if (!isCorrect)
+    if (!isCorrect) {
       return next(createError(400, "Wrong password or username!"));
+    }
 
     const token = jwt.sign(
       {
@@ -42,8 +49,8 @@ export const login = async (req, res, next) => {
       })
       .status(200)
       .send(info);
-  } catch (err) {
-    next(err);
+  } catch (error) {
+    next(error);
   }
 };
 

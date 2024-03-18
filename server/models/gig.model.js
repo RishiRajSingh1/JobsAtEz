@@ -63,6 +63,10 @@ const GigSchema = new Schema(
       type: [String],
       required: false,
     },
+    isActive: {
+      type: Boolean,
+      default: true,
+    },
     sales: {
       type: Number,
       default: 0,
@@ -70,7 +74,7 @@ const GigSchema = new Schema(
   },
   {
     timestamps: true,
-  }
+  },
 );
 
 export default mongoose.model("Gig", GigSchema);
