@@ -25,7 +25,7 @@ export const Footer = () => {
         <div className="sec4">
             <h3>Call Us</h3>
             <p>India</p>
-            <p>+91 6204827820</p>
+            <p>+91 999999999</p>
             <p>rishisinghrajputr2gmail.com</p>
         </div>
      </div>

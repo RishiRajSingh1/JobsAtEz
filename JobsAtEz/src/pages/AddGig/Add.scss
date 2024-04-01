@@ -1,16 +1,16 @@
 .add {
   display: flex;
   justify-content: center;
-  background-image: url();
+  background-color: #261046;
 
-  .container {
+  .box {
     width: 1400px;
     padding: 50px 0px;
 
     h1 {
       width: max-content;
       margin-bottom: 30px;
-      color: gray;
+      color: white;
       font-weight: 300;
     }
 
@@ -20,7 +20,7 @@
       gap: 100px;
 
       label {
-        color: gray;
+        color: white;
         font-size: 18px;
       }
 
@@ -35,8 +35,10 @@
         input,
         select,
         textarea {
+          background-color: white;
+          font-weight: bo;
           padding: 20px;
-          box-shadow: inset 10px 10px 10px rgba(21, 1, 248, 0.1);
+          box-shadow: inset 10px 10px 10px rgba(21, 1, 248, 0.3);
         }
 
         .images{
@@ -57,8 +59,11 @@
           color: white;
           font-weight: 500;
           font-size: 18px;
-          background-color: #1dbf73;
+          background-color: #1E88E5;
           cursor: pointer;
+        }
+        button:hover{
+          background-color: #004f94;
         }
 
         .add{

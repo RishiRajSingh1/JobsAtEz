@@ -39,6 +39,7 @@ function Register() {
         img: url,
       });
       navigate("/")
+      alert("Register Successful");
     } catch (err) {
       console.log(err);
     }

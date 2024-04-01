@@ -1,0 +1,120 @@
+.gigs {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #261046;
+  color: white;
+  .box {
+    width: 1400px;
+    padding: 30px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .header{
+      display: flex;
+      justify-content: space-between;
+      img{
+        filter: invert(1);
+      }
+
+    }
+
+    .breadcrumbs {
+      font-weight: 300;
+      text-transform: uppercase;
+      font-size: 13px;
+      color: white;
+    }
+
+    h1 {
+    }
+
+    p {
+      color: white;
+      font-weight: 300;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+
+      .left1 {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: white;
+        font-weight: 300;
+
+        input{
+          padding: 5px;
+          border: 1px solid lightgrey;
+          border-radius: 5px;
+          outline: none;
+
+          &::placeholder{
+            color: white;
+          }
+        }
+        button{
+          padding: 5px 10px;
+          background-color: #1071b7;
+          color: white;
+          border: none;
+          font-weight: 500;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+
+      }
+
+      .right1 {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .sortBy {
+          color: white;
+          font-weight: 300;
+        }
+
+        .sortType {
+          font-weight: 500;
+        }
+
+        img {
+          width: 15px;
+          cursor: pointer;
+        }       
+
+        .rightMenu {
+          padding: 20px;
+          background-color: white;
+          border: 0.5px solid lightgrey;
+          border-radius: 5px;
+          position: absolute;
+          top: 30px;
+          right: 0;
+          z-index: 9;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          color: black;
+
+          span {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .cards {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  }
+}

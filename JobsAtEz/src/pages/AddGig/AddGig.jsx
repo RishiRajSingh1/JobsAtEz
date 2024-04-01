@@ -61,12 +61,12 @@ const AddGig = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     mutation.mutate(state);
-    // navigate("/mygigs")
+    navigate("/mygigs")
   };
 
     return (
         <div className="add">
-          <div className="container">
+          <div className="box">
             <h1>Add New Gig</h1>
             <div className="sections">
               <div className="info">

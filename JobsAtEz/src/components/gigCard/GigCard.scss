@@ -1,0 +1,96 @@
+.gigCard {
+  width: 350px;
+  height: 480px;
+  border: 1px solid rgb(228, 228, 228);
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+
+  .info {
+    padding: 20px;
+    padding-bottom: 0px;
+    
+
+    .user {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      span {
+        font-weight: bold;
+        color: white;
+      }
+    }
+
+    p {
+      color: white;
+      margin-top: 10px;
+    }
+
+    .star {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding-bottom: 5px;
+
+      img {
+        height: 16px;
+        width: 16px;
+      }
+
+      span {
+        font-size: 14px;
+        font-weight: bold;
+        color: #ffc108;
+      }
+    }
+  }
+  .price {
+    display: flex;
+    padding-top: 10px;
+    // justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+    span {
+      color: white;
+      font-size: 15px;
+    }
+    h2 {
+      color: white;
+      font-size: 18px;
+      font-weight: 400;
+      // text-align: end;
+      margin: 0;
+      padding: 5px;
+    }
+  }
+
+  .detail {
+    padding: 20px;
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    // align-items: center;
+    // justify-content: space-between;
+
+    
+    button{
+
+     height: 40px;
+     width: fit-content;
+      border-radius: 10px;
+      text-decoration: none ;
+      color: white;
+      background-color: #1E88E5;
+      cursor: pointer;
+    }
+  }
+}
