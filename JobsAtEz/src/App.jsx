@@ -14,6 +14,7 @@ import Success from './pages/success/Success'
 import Terms from './pages/TermsAndConditions/Terms'
 import Message from './pages/message/Message'
 import Messages from './pages/messages/Messages'
+import Navbar from './components/Navbar/Navbar'
 
 // import Carousel from './components/Slider/Carousel'
 
@@ -25,6 +26,7 @@ function App() {
     <>
     <QueryClientProvider client={queryClient}>
     <Router>
+      <Navbar/>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route  path="/gigs" element= {<Gigs/>}/>
