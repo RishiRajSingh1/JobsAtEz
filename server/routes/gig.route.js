@@ -3,7 +3,8 @@ import {
   createGig,
   deleteGig,
   getGig,
-  getGigs
+  getGigs,
+  searchGigs
 } from "../controllers/gig.controller.js";
 import { verifyToken } from "../middleware/jwt.js";
 
@@ -13,5 +14,7 @@ router.post("/", verifyToken, createGig);
 router.delete("/:id", verifyToken, deleteGig);
 router.get("/single/:gigId", getGig);
 router.get("/", getGigs);
+router.get("/search", searchGigs);
+
 
 export default router;

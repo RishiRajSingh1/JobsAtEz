@@ -112,7 +112,7 @@ function Gig() {
                     </div>
                     <div className="item">
                       <span className="title">Member since</span>
-                      <span className="desc">Aug 2022</span>
+                      <span className="desc">{dataUser.createdAt.split("T")[0]}</span>
                     </div>
                     <div className="item">
                       <span className="title">Avg. response time</span>

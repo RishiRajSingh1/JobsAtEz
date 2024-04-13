@@ -55,21 +55,43 @@ export const getGig = async (req, res, next) => {
 export const getGigs = async (req, res, next) => {
   const q = req.query;
   const filters = {
-    ...(q.userId && { userId: q.userId }),
-    ...(q.cat && { cat: q.cat }),
-    ...((q.min || q.max) && {
-      price: {
-        ...(q.min && { $gt: q.min }),
-        ...(q.max && { $lt: q.max }),
-      },
-    }),
+    isActive: true,
+    ...(q.cat && { cat: q.cat }), // Filter by category
+    ...(q.min && { price: { $gt: parseInt(q.min) } }),
+    ...(q.max && { price: { $lt: parseInt(q.max) } }),
     ...(q.search && { title: { $regex: q.search, $options: "i" } }),
-    isActive: true 
   };
+
   try {
-    const gigs = await Gig.find(filters).sort({ [q.sort]: -1 });
+    let sortQuery = {};
+    if (q.sort) {
+      sortQuery[q.sort] = -1; // Default sorting in descending order
+    }
+
+    const gigs = await Gig.find(filters).sort(sortQuery);
     res.status(200).send(gigs);
   } catch (err) {
     next(err);
   }
 };
+
+export const searchGigs = async (req, res, next) => {
+  const { category, minPrice, maxPrice } = req.query;
+
+  // Constructing filters based on provided query parameters
+  const filters = {
+    isActive: true,
+    ...(category && { cat: category }), // Filtering by category
+    ...(minPrice && { price: { $gte: parseInt(minPrice) } }), // Minimum price
+    ...(maxPrice && { price: { $lte: parseInt(maxPrice) } }), // Maximum price
+  };
+
+  try {
+    const gigs = await Gig.find(filters);
+    res.status(200).json(gigs);
+  } catch (error) {
+    next(error);
+  }
+};
+
+

@@ -1,3 +1,6 @@
+a{
+  text-decoration: none;
+}
 .gigCard {
   width: 350px;
   height: 480px;
@@ -5,8 +8,11 @@
   margin-bottom: 40px;
   display: flex;
   flex-direction: column;
+  background-color: white;
+  text-decoration: none;
+  color: black;
 
-  .info {
+  .giginfo {
     padding: 20px;
     padding-bottom: 0px;
     
@@ -25,13 +31,15 @@
 
       span {
         font-weight: bold;
-        color: white;
+        // color: white;
       }
     }
 
     p {
-      color: white;
+      text-decoration: none;
+      color: black;
       margin-top: 10px;
+      font-weight: bold;
     }
 
     .star {
@@ -59,11 +67,11 @@
     gap: 10px;
     align-items: center;
     span {
-      color: white;
+      // color: white;
       font-size: 15px;
     }
     h2 {
-      color: white;
+      // color: white;
       font-size: 18px;
       font-weight: 400;
       // text-align: end;

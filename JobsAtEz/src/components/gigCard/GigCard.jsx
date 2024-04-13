@@ -21,7 +21,7 @@ const GigCard = ({ item }) => {
       if (i < starRating) {
         stars.push(<img key={i} src="./images/star.png" alt="Filled Star" />);
       } else {
-        stars.push(<img key={i} src="./images/starempty.png" alt="Empty Star"  style={{filter:"invert(1)"}}/>);
+        stars.push(<img key={i} src="./images/starempty.png" alt="Empty Star"/>);
       }
     }
 
@@ -32,7 +32,7 @@ const GigCard = ({ item }) => {
     <Link to={`/gig/${item._id}`} className="link">
       <div className="gigCard">
         <img src={item.cover} alt="" />
-        <div className="info">
+        <div className="giginfo">
           {isLoading ? (
             "loading"
           ) : error ? (
@@ -43,7 +43,7 @@ const GigCard = ({ item }) => {
               <span>{data.username}</span>
             </div>
           )}
-          <p>{item.desc}</p>
+          <p>{item.title}</p>
           <div className="star">
             {generateStars()}
           </div>

@@ -1,0 +1,48 @@
+.terms{
+    position: absolute;
+    left: 25%;
+    top:12%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .box{
+        
+        height: 418px;
+        width: 780px;
+    }
+
+    h1{
+        color: #1071b7;
+    }
+    .btn{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        a{
+       
+        :first-child{
+            cursor: pointer;
+            height: 50px;
+            width: 100px;
+            margin: 10px;
+            background-color: white;
+            border: 1px solid #1071b7;
+            color: #1071b7;
+        }
+        :nth-child(2){
+            cursor: pointer;
+            height: 50px;
+            width: 100px;
+            gap: 10px;
+            background-color: #1071b7;
+            color: white;
+    }
+}
+}
+
+
+
+}

@@ -8,6 +8,12 @@ import AddGig from './pages/AddGig/AddGig'
 import Gigs from './pages/gigs/Gigs'
 import MyGigs from './pages/myGigs/MyGigs'
 import Gig from './pages/gig/Gig'
+import Pay from './pages/pay/Pay'
+import Orders from './pages/orders/Orders'
+import Success from './pages/success/Success'
+import Terms from './pages/TermsAndConditions/Terms'
+import Message from './pages/message/Message'
+import Messages from './pages/messages/Messages'
 
 // import Carousel from './components/Slider/Carousel'
 
@@ -29,6 +35,12 @@ function App() {
         <Route path="/register" element={<Register/>}/>
         <Route path="/gig/:id" element={<Gig/>}/>
         <Route path="/gigs" element={<Gigs/>}/>
+        <Route path="/pay/:id" element={<Pay/>}/>
+        <Route path='/orders' element={<Orders/>}/>
+        <Route path='/success' element={<Success/>}/>
+        <Route path='/terms' element={<Terms/>}/>
+        <Route path='/message/:id' element={<Message/>}/>
+        <Route path='/messages' element={<Messages/>}/> 
       </Routes>
     </Router>
     </QueryClientProvider>

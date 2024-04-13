@@ -9,6 +9,14 @@
     justify-content: flex-start;
     overflow: hidden;
 
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    
+
     h1{
         font-size: 56px;
         color: white;
@@ -36,4 +44,5 @@
         height: 76px;
         margin-top: 35px;
     }
+
 }

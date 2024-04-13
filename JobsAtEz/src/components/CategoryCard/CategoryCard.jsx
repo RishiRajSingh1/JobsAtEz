@@ -1,12 +1,17 @@
-import React from 'react'
-import './CategoryCard.scss'
+import React from 'react';
+import './CategoryCard.scss';
+import { useNavigate } from 'react-router-dom';
 
-const CategoryCard = () => {
+const CategoryCard = ({ item }) => {
+  const navigate = useNavigate();
   return (
+    
     <div className="container">
-        <img src="../../../public/images/cartoonanimation.png" alt="" />
+      <img src={item.imageUrl} alt={item.name} />
+      <h3>{item.name}</h3> 
     </div>
-  )
-}
+    
+  );
+};
 
-export default CategoryCard
+export default CategoryCard;

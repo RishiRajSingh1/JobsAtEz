@@ -19,7 +19,9 @@
 
         }
         .buttons{
+            form{
             display: flex;
+            cursor: pointer;
             align-items: center;
             justify-content: center;
             input{
@@ -31,7 +33,9 @@
                 width: 250px;
                 height: 76px;
                 color: white;
+                cursor: pointer;
             }
+        }
         }
     }
     .right{

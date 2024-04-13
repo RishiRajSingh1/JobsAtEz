@@ -1,6 +1,18 @@
 .container{
     width: 285px;
     height: 241px;
+    
+    img{
+        width: 285px;
+        height: 241px;
+        filter:brightness(0.5);
+        border-radius: 20px;
+    }
+    h3{
+        color: white;
+        position: relative;
+        bottom: 60%;
+    }
 }
 .container:hover{
     transition-duration: 150ms;

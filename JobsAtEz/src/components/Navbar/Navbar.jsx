@@ -44,7 +44,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="links">
-        <span>JobAtEz Business</span>
+        <Link to="/about">About</Link>
         <span>Explore</span>
         <span>English</span>
         {!currentUser?.isSeller && <span>Become a Seller</span>}

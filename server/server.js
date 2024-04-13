@@ -8,8 +8,10 @@ import conversationRoute from "./routes/conversation.route.js";
 import messageRoute from "./routes/message.route.js";
 import reviewRoute from "./routes/review.route.js";
 import authRoute from "./routes/auth.route.js";
+import otpRoute from "./routes/sendotp.route.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import subscriptionRoute from "./routes/subscription.route.js";
 
 const app = express();
 dotenv.config();
@@ -24,7 +26,7 @@ const connect = async () => {
   }
 };
 
-app.use(cors({ origin: `http://localhost:${process.env.FRONTEND_PORT}`, credentials: true }));
+app.use(cors({ credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
 
@@ -35,6 +37,8 @@ app.use("/api/orders", orderRoute);
 app.use("/api/conversations", conversationRoute);
 app.use("/api/messages", messageRoute);
 app.use("/api/reviews", reviewRoute);
+app.use("/api/subscription", subscriptionRoute);
+app.use("/api/otp", otpRoute);
 
 
 app.use((err, req, res, next) => {

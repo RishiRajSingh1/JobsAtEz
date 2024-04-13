@@ -1,7 +1,13 @@
 .reviews {
   margin-top: 50px;
+  h2{
+    text-decoration: none;
+    margin: 0px;
+    padding: 0%;
+  }
 
   .add {
+    background-color: white;
     margin-top: 20px;
     display: flex;
     flex-direction: column;

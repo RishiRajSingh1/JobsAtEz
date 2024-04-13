@@ -1,0 +1,41 @@
+.payment{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: start;
+        gap: 20px;
+        width: 500px;
+        height: 600px;
+        input{
+
+
+        }
+        button{
+            width: 200px;
+            height: 50px;
+            color: white;
+            background-color: #6905ff;
+        }
+    
+    }
+    .right{
+        *{
+            gap: 40px;
+        }
+       h3{
+        margin: 0px;
+        font-size: 30px;
+       }
+        display: flex;
+        flex-direction: column;
+        justify-content: start;   
+        align-items: start;
+        height: 550px;
+        width: 350px;
+        border: black 4px solid;
+    }
+}
