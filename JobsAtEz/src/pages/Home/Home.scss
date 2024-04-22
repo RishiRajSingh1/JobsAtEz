@@ -18,15 +18,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 3%;
-    height: 981px;
-    width: 1512px;
-    background-image: url('../../../public/images/BannerBackground.png');
-    background-repeat: no-repeat;
 }
 .category{
-    width: 1268px;
-    height: 693px;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -37,19 +31,12 @@
         justify-content: center;
         flex-wrap: wrap;
         gap: 2rem;
-        
-        // transform: scale(1.1);
-        // transition-timing-function: ease-in-out;
-        // transition-duration: 
     }
     h1{
+      margin: 40px;
         font-size: 56px;
         span{
             color: #1E88E5;
         }
     }
-
-    
-
-    
 }

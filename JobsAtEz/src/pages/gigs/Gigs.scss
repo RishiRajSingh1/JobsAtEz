@@ -2,8 +2,6 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  background-color: #261046;
-  color: white;
   .box {
     width: 1400px;
     padding: 30px 0px;
@@ -21,10 +19,6 @@
       display: flex;
       align-items: start;
       justify-content: space-between;
-      img{
-        
-        filter: invert(1);
-      }
 
     }
 
@@ -32,14 +26,12 @@
       font-weight: 300;
       text-transform: uppercase;
       font-size: 13px;
-      color: white;
     }
 
     h1 {
     }
 
     p {
-      color: white;
       font-weight: 300;
     }
 
@@ -53,11 +45,12 @@
         display: flex;
         align-items: center;
         gap: 10px;
-        color: white;
+       
         font-weight: 300;
 
         input{
           padding: 5px;
+          color: black;
           border: 1px solid lightgrey;
           border-radius: 5px;
           outline: none;

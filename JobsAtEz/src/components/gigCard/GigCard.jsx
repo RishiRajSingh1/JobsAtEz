@@ -3,6 +3,9 @@ import "./GigCard.scss";
 import { Link } from "react-router-dom";
 import { useQuery } from "react-query";
 import newRequest from "../../utils/newRequest";
+import { Button } from "@/components/ui/button"
+import { ButtonLoading } from "../Loading/Loading";
+
 
 const GigCard = ({ item }) => {
   const { isLoading, error, data } = useQuery({
@@ -34,7 +37,7 @@ const GigCard = ({ item }) => {
         <img src={item.cover} alt="" />
         <div className="giginfo">
           {isLoading ? (
-            "loading"
+            <ButtonLoading />
           ) : error ? (
             "Something went wrong!"
           ) : (
@@ -53,7 +56,7 @@ const GigCard = ({ item }) => {
           </div>
         </div>
         <div className="detail">
-          <button>BOOK NOW</button>
+          <Button>BOOK NOW</Button>
         </div>
       </div>
     </Link>

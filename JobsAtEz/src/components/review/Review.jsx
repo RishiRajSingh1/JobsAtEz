@@ -2,6 +2,7 @@ import { useQuery } from "react-query";
 import React from "react";
 import newRequest from "../../utils/newRequest";
 import "./Review.scss";
+import { ButtonLoading } from "../Loading/Loading";
 const Review = ({ review }) => {
   const { isLoading, error, data } = useQuery(
     {
@@ -17,7 +18,7 @@ const Review = ({ review }) => {
   return (
     <div className="review">
       {isLoading ? (
-        "loading"
+        <ButtonLoading/>
       )  : error ? (
         error.response ? (
           <div>Error: {error.response.data.message}</div>

@@ -2,8 +2,13 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 5%;
+    background-image: url("./images/BannerBackground.png");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-color: #13062A;
+    width: 98.9vw;
     .left{
+        padding-top: 100px;
         .textbox{
             color: white;
             width: 634px;
@@ -14,9 +19,7 @@
             }
             h3{
                 font-size: 24px;
-                
             }
-
         }
         .buttons{
             form{

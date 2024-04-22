@@ -6,6 +6,10 @@ import { useQuery } from "react-query";
 import newRequest from "../../utils/newRequest";
 import { useLocation } from "react-router-dom";
 import {useNavigate} from "react-router-dom"
+import { ComboboxDemo } from "../../components/Combobox/Combobox";
+import { ButtonLoading } from "../../components/Loading/Loading";
+import { Input } from "@/components/ui/input"
+
 
 function Gigs() {
   const [sort, setSort] = useState("sales");
@@ -64,8 +68,8 @@ function Gigs() {
         <div className="menu">
           <div className="left1">
             <span>Budget</span>
-            <input ref={minRef} type="number" placeholder="min" />
-            <input ref={maxRef} type="number" placeholder="max" />
+            <Input ref={minRef} type="number" placeholder="min" />
+            <Input ref={maxRef} type="number" placeholder="max" />
             <button onClick={apply}>Apply</button>
           </div>
           <div className="right1">
@@ -78,7 +82,6 @@ function Gigs() {
               src="/images/dropdown.png"
               alt=""
               onClick={() => setOpen(!open)}
-              style={{ filter: "invert(1)" }}
             />
             {open && (
               <div className="rightMenu">
@@ -93,7 +96,7 @@ function Gigs() {
           </div>
         </div>
         <span>Search</span>
-        <input
+        <Input
           className="searchBox"
           type="text"
           value={searchBoxValue}
@@ -102,7 +105,7 @@ function Gigs() {
         />
         <div className="cards">
           {isLoading
-            ? "Loading..."
+            ? <ButtonLoading/>
             : error
             ? "Something went wrong!"
             : data.map((gig) => <GigCard key={gig._id} item={gig} />)}

@@ -4,6 +4,7 @@ import "./MyGigs.scss";
 import getCurrentUser from "../../utils/getCurrentUser";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 import newRequest from "../../utils/newRequest";
+import { ButtonLoading } from "../../components/Loading/Loading";
 
 function MyGigs() {
   const currentUser = getCurrentUser();
@@ -34,7 +35,7 @@ function MyGigs() {
   return (
     <div className="myGigs">
       {isLoading ? (
-        "loading"
+        <ButtonLoading/>
       ) : error ? (
         "error"
       ) : (

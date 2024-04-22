@@ -59,12 +59,11 @@ const Terms = () => {
             These Terms and Conditions shall be governed by and construed in accordance with the laws of [Your Jurisdiction].
             Any disputes arising out of or in connection with these Terms and Conditions shall be subject to the exclusive jurisdiction of the courts in [Your Jurisdiction].
             By using JobsAtEz, you acknowledge that you have read, understood, and agreed to these Terms and Conditions. If you do not agree to these Terms and Conditions, you may not use JobsAtEz. These Terms and Conditions may be updated from time to time, and it is your responsibility to review them periodically for any changes.
-
           </p>
           </div>
           <div className="btn">
-          <Link to={"/"}><button>Cancel</button>
-            <button>Accept</button></Link>
+          <Link to={"/"}><button>Cancel</button></Link>
+            <Link to={"/register"}><button>Accept</button></Link>
             
           </div>
         </div>

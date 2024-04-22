@@ -4,13 +4,17 @@ import { useNavigate } from 'react-router-dom';
 
 const CategoryCard = ({ item }) => {
   const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate(`/gigs?search=${item.name}`);
+  };
+
   return (
-    
-    <div className="container">
+    <div className="container" onClick={handleSubmit}>
       <img src={item.imageUrl} alt={item.name} />
       <h3>{item.name}</h3> 
     </div>
-    
   );
 };
 

@@ -3,6 +3,7 @@ import upload from "../../utils/upload";
 import "./Register.scss";
 import newRequest from "../../utils/newRequest";
 import { useNavigate } from "react-router-dom";
+import { Input } from "@/components/ui/input"
 
 function Register() {
   const [file, setFile] = useState(null);
@@ -50,25 +51,25 @@ function Register() {
         <div className="left">
           <h1>Create a new account</h1>
           <label htmlFor="">Username</label>
-          <input
+          <Input
             name="username"
             type="text"
             placeholder=" YourName"
             onChange={handleChange}
           />
           <label htmlFor="">Email</label>
-          <input
+          <Input
             name="email"
             type="email"
             placeholder="youremail@email.com"
             onChange={handleChange}
           />
           <label htmlFor="">Password</label>
-          <input name="password" type="password" placeholder="sample@1345" onChange={handleChange} />
+          <Input name="password" type="password" placeholder="sample@1345" onChange={handleChange} />
           <label htmlFor="">Profile Picture</label>
-          <input type="file" onChange={(e) => setFile(e.target.files[0])} />
+          <Input type="file" onChange={(e) => setFile(e.target.files[0])} />
           <label htmlFor="">Country</label>
-          <input
+          <Input
             name="country"
             type="text"
             placeholder="India"
@@ -80,12 +81,12 @@ function Register() {
           <div className="toggle">
             <label htmlFor="">Activate Your seller account</label>
             <label className="switch">
-              <input type="checkbox" onChange={handleSeller} />
+              <Input type="checkbox" onChange={handleSeller} />
               <span className="slider round"></span>
             </label>
           </div>
           <label htmlFor="">Phone Number</label>
-          <input
+          <Input
             name="phone"
             type="text"
             placeholder="+91 999 999 9999"

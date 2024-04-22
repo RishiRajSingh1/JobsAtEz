@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./Login.scss";
 import newRequest from "../../utils/newRequest";
 import { useNavigate } from "react-router-dom";
+import { Input } from "@/components/ui/input"
+
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -28,7 +30,7 @@ function Login() {
       <form onSubmit={handleSubmit}>
         <h1>Sign in</h1>
         <label htmlFor="">Username</label>
-        <input
+        <Input
           name="username"
           type="text"
           placeholder="username"
@@ -36,7 +38,7 @@ function Login() {
         />
 
         <label htmlFor="">Password</label>
-        <input
+        <Input
           name="password"
           type="password"
           placeholder="password"

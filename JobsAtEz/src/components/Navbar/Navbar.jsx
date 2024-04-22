@@ -2,11 +2,12 @@ import React, { useState,useEffect, } from 'react'
 import {Link ,useNavigate,useLocation} from 'react-router-dom'
 import './Navbar.scss'
 import newRequest from "../../utils/newRequest";
+import AlertDialog1 from '../AlertDialog/AlertDialog';
+import { ModeToggle } from '../ThemeToggleButton/ToggleButton';
 
 const Navbar = () => {
   const [active, setActive] = useState(false);
   const [open, setOpen] = useState(false);
-
   const { pathname } = useLocation();
   const navigate=useNavigate();
 
@@ -26,13 +27,13 @@ const Navbar = () => {
   const handleLogout = async () => {
     try {
       await newRequest.post("/auth/logout");
-      localStorage.setItem("currentUser", null);
+      localStorage.removeItem("currentUser"); 
       navigate("/");
     } catch (err) {
       console.log(err);
     }
   };
-
+  
 
   return (
     
@@ -50,7 +51,7 @@ const Navbar = () => {
         {!currentUser?.isSeller && <span>Become a Seller</span>}
         {currentUser ? (
           <div className="user" onClick={() => setOpen(!open)}>
-            <img src={currentUser.img || "/images/noprofile.png"} alt="" style={{width:"30px",height:"30px", borderRadius:"50%"}}/>
+            <img src={currentUser.img || "/images/noprofile.png"} alt="." style={{width:"30px",height:"30px", borderRadius:"50%"}}/>
             <span>{currentUser?.username}</span>
             {open && (
               <div className="options">
@@ -64,6 +65,9 @@ const Navbar = () => {
                     </Link>
                   </>
                 )}
+                 <Link className="link" to="/profile">
+                      Profile
+                    </Link>
                 <Link className="link" to="/orders">
                   Orders
                 </Link>
@@ -79,11 +83,12 @@ const Navbar = () => {
         ) : (
           <>
             <Link to="/login" className="link">Sign in</Link>
-            <Link className="link" to="/register">
+            <Link className="link" to="/terms">
               <button>Join</button>
             </Link>
           </>
         )}
+        <ModeToggle/>
       </div>
     </div>
   </div>

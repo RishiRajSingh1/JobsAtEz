@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import {Link, useNavigate } from 'react-router-dom';
 import "./Banner.scss";
+import { Input } from "@/components/ui/input"
+
 
 const Banner = () => {
   const [input, setInput] = useState('');
@@ -19,7 +21,7 @@ const Banner = () => {
         </div>
         <div className="buttons">
           <form onSubmit={handleSubmit}>
-            <input 
+            <Input 
               placeholder='Search Freelancer Work' 
               type="text" 
               value={input}

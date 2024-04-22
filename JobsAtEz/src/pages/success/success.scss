@@ -1,0 +1,22 @@
+.successpage{
+    display: flex;
+    height: 95vh;
+    justify-content: center;
+    align-items: center;
+
+    .left{
+        img{
+            height: 90vh;
+        }
+    }
+
+    .right{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        h3{
+            font-size: 30px;
+            font-weight: bold;
+        }
+    }
+}

@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Orders.scss";
 import { useQuery } from "react-query";
 import newRequest from "../../utils/newRequest";
+import { ButtonLoading } from "../../components/Loading/Loading";
 
 const Orders = () => {
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
@@ -36,7 +37,7 @@ const Orders = () => {
   return (
     <div className="orders">
       {isLoading ? (
-        "loading"
+        <ButtonLoading />
       ) : error ? (
         "error"
       ) : (

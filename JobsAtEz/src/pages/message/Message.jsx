@@ -3,6 +3,7 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 import newRequest from "../../utils/newRequest";
 import "./Message.scss";
+import { ButtonLoading } from "../../components/Loading/Loading";
 
 const Message = () => {
   const { id } = useParams();
@@ -43,7 +44,7 @@ const Message = () => {
           <Link to="/messages">Messages</Link> 
         </span>
         {isLoading ? (
-          "loading"
+          <ButtonLoading/>
         ) : error ? (
           "error"
         ) : (

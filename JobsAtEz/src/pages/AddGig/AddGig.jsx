@@ -5,6 +5,8 @@ import upload from "../../utils/upload";
 import { useMutation, useQueryClient } from "react-query";
 import newRequest from "../../utils/newRequest";
 import { useNavigate } from "react-router-dom";
+import { Input } from "@/components/ui/input"
+
 
 const AddGig = () => {
   const [singleFile, setSingleFile] = useState(undefined);
@@ -85,7 +87,7 @@ const AddGig = () => {
           <div className="info">
             <form onSubmit={handleSubmit}>
               <label htmlFor="">Title</label>
-              <input
+              <Input
                 type="text"
                 name="title"
                 placeholder="e.g. I will do something I'm really good at"
@@ -113,12 +115,12 @@ const AddGig = () => {
               <div className="images">
                 <div className="imagesInputs">
                   <label htmlFor="">Cover Image</label>
-                  <input
+                  <Input
                     type="file"
                     onChange={(e) => setSingleFile(e.target.files[0])}
                   />
                   <label htmlFor="">Upload Images</label>
-                  <input
+                  <Input
                     type="file"
                     multiple
                     onChange={(e) => setFiles(e.target.files)}
@@ -141,7 +143,7 @@ const AddGig = () => {
           </div>
           <div className="details">
             <label htmlFor="">Service Title</label>
-            <input
+            <Input
               type="text"
               name="shortTitle"
               placeholder="e.g. One-page web design"
@@ -157,9 +159,9 @@ const AddGig = () => {
               rows="10"
             ></textarea>
             <label htmlFor="">Delivery Time (e.g. 3 days)</label>
-            <input type="number" name="deliveryTime" onChange={handleChange} />
+            <Input type="number" name="deliveryTime" onChange={handleChange} />
             <label htmlFor="">Revision Number</label>
-            <input
+            <Input
               type="number"
               name="revisionNumber"
               onChange={handleChange}
@@ -184,7 +186,7 @@ const AddGig = () => {
               ))}
             </div>
             <label htmlFor="">Price</label>
-            <input type="number" onChange={handleChange} name="price" />
+            <Input type="number" onChange={handleChange} name="price" />
           </div>
         </div>
       </div>

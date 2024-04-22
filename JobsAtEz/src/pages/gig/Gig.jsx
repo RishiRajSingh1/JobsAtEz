@@ -12,6 +12,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+import { ButtonLoading } from "../../components/Loading/Loading";
 
 function Gig() {
   const { id } = useParams();
@@ -58,7 +59,7 @@ function Gig() {
   return (
     <div className="gig">
       {isLoading ? (
-        "loading"
+        <ButtonLoading/>
       ) : error ? (
         "Something went wrong!"
       ) : (
@@ -69,7 +70,7 @@ function Gig() {
             </span> */}
             <h1>{data.title}</h1>
             {isLoadingUser ? (
-              "loading"
+              <ButtonLoading/>
             ) : errorUser ? (
               "Something went wrong!"
             ) : (
@@ -100,7 +101,7 @@ function Gig() {
             <h2>About This Gig</h2>
             <p>{data.desc}</p>
             {isLoadingUser ? (
-              "loading"
+              <ButtonLoading/>
             ) : errorUser ? (
               "Something went wrong!"
             ) : (

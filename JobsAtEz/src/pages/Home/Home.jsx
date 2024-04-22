@@ -1,5 +1,4 @@
-// Home.js
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import './Home.scss';
 import Banner from '../../components/Banner/Banner';
@@ -12,6 +11,12 @@ import categories from "../../data.json";
 import { Link } from 'react-router-dom';
 
 const Home = () => {
+  const [expanded, setExpanded] = useState(false);
+
+  const toggleCategories = () => {
+    setExpanded(!expanded);
+  };
+
   return (
     <>
       <div className="Home">
@@ -24,14 +29,16 @@ const Home = () => {
         <div className="category">
           <h1>Choose Trending <span>Category</span> </h1>
           <div className="categorycard">
-            {categories.map((item,index)=>(
+            {categories.slice(0, expanded ? categories.length : 4).map((item, index) => (
               <CategoryCard key={index} item={item}/>
             ))}
           </div>
+          <button className='btn' style={{margin:"20px" ,cursor:"pointer"}} onClick={toggleCategories}>
+            <span style={{color:"white"}}>
+              {expanded ? "Show Less Categories" : "More Categories"}
+            </span>
+          </button>
         </div>
-        <button className='btn' style={{margin:"20px" ,cursor:"pointer"}}>
-          <Link to="/gigs" style={{color:"white"}}>More Categories</Link>
-        </button>
       </div>
       <Subscribe/>
       <Footer/>

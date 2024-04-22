@@ -15,6 +15,8 @@ import Terms from './pages/TermsAndConditions/Terms'
 import Message from './pages/message/Message'
 import Messages from './pages/messages/Messages'
 import Navbar from './components/Navbar/Navbar'
+import Profile from './pages/ProfilePage/Profile'
+import { ModeToggle } from './components/ThemeToggleButton/ToggleButton'
 
 // import Carousel from './components/Slider/Carousel'
 
@@ -26,7 +28,6 @@ function App() {
     <>
     <QueryClientProvider client={queryClient}>
     <Router>
-      <Navbar/>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route  path="/gigs" element= {<Gigs/>}/>
@@ -43,6 +44,7 @@ function App() {
         <Route path='/terms' element={<Terms/>}/>
         <Route path='/message/:id' element={<Message/>}/>
         <Route path='/messages' element={<Messages/>}/> 
+        <Route path='profile' element={<Profile/>}/>
       </Routes>
     </Router>
     </QueryClientProvider>

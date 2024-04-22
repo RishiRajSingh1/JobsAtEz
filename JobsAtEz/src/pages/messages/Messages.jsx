@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import newRequest from "../../utils/newRequest";
 import "./Messages.scss";
 import moment from "moment";
+import { ButtonLoading } from "../../components/Loading/Loading";
 
 const Messages = () => {
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
@@ -17,6 +18,7 @@ const Messages = () => {
         return res.data;
       }),
   });
+  console.log(data);
 
   const mutation = useMutation({
     mutationFn: (id) => {
@@ -34,11 +36,11 @@ const Messages = () => {
   return (
     <div className="messages">
       {isLoading ? (
-        "loading"
+        <ButtonLoading/>
       ) : error ? (
         "error"
       ) : (
-        <div className="container">
+        <div className="box">
           <div className="title">
             <h1>Messages</h1>
           </div>

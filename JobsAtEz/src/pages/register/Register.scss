@@ -1,4 +1,5 @@
 .register {
+
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -7,11 +8,11 @@
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 5%;
-  height: 89vh;
+  height: 100vh;
   form {
     width: 90vw;
     height: 70vh;
-    padding:100px;
+    padding: 0 100px;
     display: flex;
     gap: 120px 100px;
 
@@ -31,6 +32,11 @@
       flex-direction: column;
       justify-content: space-between;
 
+      h1{
+        font-size: 40px;
+        font-weight: bold;
+      }
+
       label {
         color: white;
         font-size: 18px;
@@ -44,12 +50,14 @@
       }
 
       button {
+        gap: 10px;
         border: none;
+        margin: 10px;
         padding: 20px;
         color: white;
         font-weight: 500;
         font-size: 18px;
-        background-color: #1dbf73;
+        background-color:#2196f3;
         cursor: pointer;
       }
 

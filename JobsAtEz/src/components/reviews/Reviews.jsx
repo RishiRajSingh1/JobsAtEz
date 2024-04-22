@@ -3,6 +3,9 @@ import React from "react";
 import newRequest from "../../utils/newRequest";
 import Review from "../review/Review";
 import "./Reviews.scss";
+import { ButtonLoading } from "../Loading/Loading";
+import { Input } from "@/components/ui/input"
+
 const Reviews = ({ gigId }) => {
 
   const queryClient = useQueryClient()
@@ -34,14 +37,14 @@ const Reviews = ({ gigId }) => {
     <div className="reviews">
       <h2>Reviews</h2>
       {isLoading
-        ? "loading"
+        ? <ButtonLoading/>
         : error
         ? "Something went wrong!"
         : data.map((review) => <Review key={review._id} review={review} />)}
       <div className="add">
         <h3>Add a review</h3>
         <form action="" className="addForm" onSubmit={handleSubmit}>
-          <input type="text" placeholder="write your opinion" />
+          <Input type="text" placeholder="write your opinion" />
           <label>Rating&nbsp;&nbsp;&nbsp;
           <select name="" id="" >
             <option value={1}>1</option>

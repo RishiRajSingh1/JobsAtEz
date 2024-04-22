@@ -12,6 +12,7 @@ import otpRoute from "./routes/sendotp.route.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import subscriptionRoute from "./routes/subscription.route.js";
+import path from "path";
 
 const app = express();
 dotenv.config();
@@ -52,3 +53,8 @@ app.listen(process.env.BACKEND_PORT, () => {
   connect();
   console.log("Backend server is running!");
 });
+
+// app.use(express.static(path.resolve("./frontend/build")));
+// app.get("*", (req, res) => {
+//   res.sendFile(path.resolve("./frontend/build/index.html"));
+// });

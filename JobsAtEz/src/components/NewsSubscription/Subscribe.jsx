@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './Subscribe.scss';
 import axios from 'axios';
+import { Input } from "@/components/ui/input"
+
 
 const Subscribe = () => {
   const [email, setEmail] = useState('');
@@ -26,7 +28,7 @@ const Subscribe = () => {
       <h1>Newsletter Subscription</h1>
       <h3>Subscribe to our newsletter to get new freelance work and projects</h3>
       <form onSubmit={handleSubmit}>
-        <input
+        <Input
           type="email"
           placeholder="Enter your email address"
           value={email}
