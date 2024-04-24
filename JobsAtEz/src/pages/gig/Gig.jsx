@@ -13,6 +13,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import { ButtonLoading } from "../../components/Loading/Loading";
+import ErrorAlert from "../ErrorAlert/ErrorAlert";
 
 function Gig() {
   const { id } = useParams();
@@ -61,13 +62,10 @@ function Gig() {
       {isLoading ? (
         <ButtonLoading/>
       ) : error ? (
-        "Something went wrong!"
+        <ErrorAlert error={error}/>
       ) : (
         <div className="box">
           <div className="left">
-            {/* <span className="breadcrumbs">
-              JobsAtEz {">"} Preview Of Gig {">"}
-            </span> */}
             <h1>{data.title}</h1>
             {isLoadingUser ? (
               <ButtonLoading/>

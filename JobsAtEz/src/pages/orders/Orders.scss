@@ -12,7 +12,7 @@
       justify-content: space-between;
 
       button {
-        background-color: #1dbf73;
+        background-color:#1E88E5;
         color: white;
         font-weight: 500;
         border: none;
@@ -47,7 +47,8 @@
           }
         }
         &:nth-child(even) {
-          background-color: #1dbf730f;
+          color: white;
+          background-color: #95c3ea;
         }
       }
     }

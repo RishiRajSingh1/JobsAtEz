@@ -1,5 +1,6 @@
 import createError from "../utils/createError.js";
 import Conversation from "../models/conversation.model.js";
+import User from "../models/user.model.js";
 
 export const createConversation = async (req, res, next) => {
   // console.log(req.userId, req.body.to, req.isSeller, req.userName);
@@ -52,7 +53,7 @@ export const getSingleConversation = async (req, res, next) => {
 export const getConversations = async (req, res, next) => {
   try {
     const conversations = await Conversation.find(
-      req.isSeller ? { sellerId: req.userId } : { buyerId: req.userId }
+      req.isSeller ? { sellerId: req.userId } : { buyerId: req.userId },
     ).sort({ updatedAt: -1 });
     res.status(200).send(conversations);
   } catch (err) {
