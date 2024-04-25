@@ -27,7 +27,13 @@ const connect = async () => {
   }
 };
 
-app.use(cors({ origin: `http://localhost:${process.env.FRONTEND_PORT}`||"*", credentials: true }));
+app.use(cors({ 
+  origin: [
+    `http://localhost:${process.env.FRONTEND_PORT}`,
+    "https://jobsatez-frontend.onrender.com"
+  ],
+  credentials: true 
+}));
 app.use(express.json());
 app.use(cookieParser());
 
