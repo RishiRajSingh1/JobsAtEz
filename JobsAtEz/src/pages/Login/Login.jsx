@@ -26,7 +26,7 @@ function Login() {
   return (
     <div className="login">
       <div  className="right">
-        <img src="../../../public/images/Login.png" alt="" /></div>
+        <img src="./images/Login.png" alt="" /></div>
       <form onSubmit={handleSubmit}>
         <h1>Sign in</h1>
         <label htmlFor="">Username</label>

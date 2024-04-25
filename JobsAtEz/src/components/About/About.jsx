@@ -5,13 +5,13 @@ const About = () => {
   return (
    <div className="about">
     <div className="left">
-        <img src="../../../public/images/GirlModel.png" alt="" />
+        <img src="./images/GirlModel.png" alt="" />
     </div>
     <div className="right">
         <h1>Find The Best <span>Freelancers</span> Here </h1>
-        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut erat bibendum ornare urna, cursus eget convallis. Feugiat imperdiet posuere justo, ultrices interdum
-             sed orci nunc, mattis. Ipsum viverra viverra neque adipiscing arcu, quam dictum. Dui mi viverra dui, sit accumsan, tincidunt massa. Dui cras magnis.
-        </h3>
+       <h3>"Empower Your Dreams: Our Freelance Platform Offers a Gateway to Unmatched Opportunities, Where Your Skills Shine and Your Potential Soars!"
+"Unleash Your Potential: Join Our Thriving Freelance Community, Where Innovation Meets Opportunity and Success Knows No Limits!"
+"Elevate Your Freelance Career: Step into a World of Boundless Possibilities, Where Every Project is a Pathway to Success and Every Opportunity a Door to Excellence!"</h3>
     </div>
    </div>
   )

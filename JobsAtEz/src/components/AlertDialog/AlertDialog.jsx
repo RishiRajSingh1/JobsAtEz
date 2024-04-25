@@ -13,16 +13,15 @@ import {
   
 
 
-const AlertDialog1 = () => {
+const AlertDialog1 = (error) => {
   return (
     <AlertDialog>
   <AlertDialogTrigger>AlertDialog</AlertDialogTrigger>
   <AlertDialogContent>
     <AlertDialogHeader>
-      <AlertDialogTitle>Terms And Conditions</AlertDialogTitle>
+      <AlertDialogTitle>Alert</AlertDialogTitle>
       <AlertDialogDescription>
-        This action cannot be undone. This will permanently delete your account
-        and remove your data from our servers.
+      {error}
       </AlertDialogDescription>
     </AlertDialogHeader>
     <AlertDialogFooter>

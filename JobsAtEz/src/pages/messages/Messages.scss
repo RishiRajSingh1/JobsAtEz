@@ -11,7 +11,7 @@
       justify-content: space-between;
 
       button {
-        background-color: #1dbf73;
+        background-color: #1E88E5;
         color: black;
         font-weight: 500;
         border: none;
@@ -42,15 +42,15 @@
         }
 
         button {
-          background-color: #1dbf73;
-          color: black;
+          background-color: #1E88E5;
+          color: white;
           padding: 10px;
           border: none;
           cursor: pointer;
         }
 
         &.active {
-          background-color: #1dbf730f;
+          background-color: #ecf4fb;
         }
       }
     }

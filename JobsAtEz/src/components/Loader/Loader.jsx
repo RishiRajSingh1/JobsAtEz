@@ -3,7 +3,7 @@ import React from 'react'
 const Loader = () => {
   return (
     <div className="navbar">
-    <img src='../../../public/images/logo.png'/>
+    <img src='./images/logo.png'/>
 </div>
   )
 }

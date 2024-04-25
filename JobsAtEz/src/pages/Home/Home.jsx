@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Navbar from '../../components/Navbar/Navbar';
 import './Home.scss';
 import Banner from '../../components/Banner/Banner';
 import Options from '../../components/Options/Options';
@@ -21,7 +20,6 @@ const Home = () => {
     <>
       <div className="Home">
         <div className='Banner'>
-          {/* <Navbar/> */}
           <Banner/>
           <Options/>
         </div>
@@ -41,7 +39,7 @@ const Home = () => {
         </div>
       </div>
       <Subscribe/>
-      {/* <Footer/> */}
+      <Footer/>
     </>
   );
 }
