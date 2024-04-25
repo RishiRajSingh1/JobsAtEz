@@ -30,7 +30,7 @@ const connect = async () => {
 app.use(cors({ 
   origin: [
     `http://localhost:${process.env.FRONTEND_PORT}`,
-    "https://jobsatez-frontend.onrender.com"
+    process.env.FRONTEND_URL
   ],
   credentials: true 
 }));
