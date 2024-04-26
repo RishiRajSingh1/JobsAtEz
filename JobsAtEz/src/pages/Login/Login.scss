@@ -30,6 +30,9 @@
         color: white;
         font-size: 18px;
       }
+      p{
+        color: red;
+      }
   
       input,
       textarea {
@@ -56,11 +59,8 @@
         border-radius: 10px;
         width: 460px;
         text-align: center;
-        height: fit-content;
+        height: 8vh;
 
-      }
-      button:hover{
-        background-color: #014d29;
       }
   
       span{

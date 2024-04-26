@@ -2,8 +2,7 @@
     position: absolute;
     left: 10vw;
     top: 10vh;
-    border: 2px solid red;
-    height: 70vh;
+    height: 80vh;
     width: 80vw;
     display: flex;
     justify-content: center;
@@ -14,12 +13,12 @@
         align-items: center;
         height: inherit;
         width: 30vw;
-        border: 2px solid blue;
         text-align: center;
 
         img {
-            width: 20vw;
-            height:50vh;
+            border-radius: 100%;
+            width: 15vw;
+            height:15vw;
         }
 
         p {
@@ -32,18 +31,20 @@
     .right {
         padding: 30px;
         gap: 20px;
-        border: 2px solid green;
+        border: 2px solid black;
         display: flex;
         flex-direction: column;
-        align-items: start;
+        align-items: center;
         height: inherit;
         width: inherit;
         overflow: auto;
+        align-items: center;
 
         h1 {
             margin: 0;
             font-size: 20px;
             font-weight: bold;
+            text-align: center;
         }
 
         button {
@@ -51,9 +52,9 @@
             color: white;
             padding: 2px;
             border-radius: 20px;
-            background-color: #501794;
-            height: 40px;
-            width: 150px;
+            background-color: #1E88E5;
+            height: 40vh;
+            width: 20vw;
         }
 
         table {

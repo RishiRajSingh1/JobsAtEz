@@ -41,3 +41,25 @@ export const getUser = async (req, res, next) => {
     next(error);
   }
 };
+export const updateUser = async (req, res) => {
+  const { id } = req.params;
+  const { username, email, password, img, country, phone, desc, isSeller, isActive } = req.body;
+
+  try {
+    const updatedUser = await User.findByIdAndUpdate(id, {
+      username,
+      email,
+      password,
+      img,
+      country,
+      phone,
+      desc,
+      isSeller,
+      isActive,
+    }, { new: true });
+
+    res.status(200).json(updatedUser);
+  } catch (error) {
+    res.status(500).json({ message: 'Could not update user data', error: error.message });
+  }
+};

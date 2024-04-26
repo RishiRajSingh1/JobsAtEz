@@ -7,7 +7,7 @@ export const Footer = () => {
     <>
      <div className='Footer'>
         <div className="sec1">
-            <img src="./images/logo.png" alt="" />
+            <img src="./images/Logo.png" alt="" />
             <Link>Powerful Freelance Marketplace System with ability to change the Users (Freelancers & Clients)</Link>
             <div className="social"></div>
         </div>

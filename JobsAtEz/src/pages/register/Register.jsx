@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import upload from "../../utils/upload";
 import "./Register.scss";
 import newRequest from "../../utils/newRequest";
 import { useNavigate } from "react-router-dom";
-import { Input } from "@/components/ui/input"
+import { Input } from "@/components/ui/input";
 
 function Register() {
   const [file, setFile] = useState(null);
@@ -15,93 +15,115 @@ function Register() {
     country: "",
     isSeller: false,
     desc: "",
+    phone: "", // Added phone field
   });
-
+  const [formSubmitted, setFormSubmitted] = useState(false);
   const navigate = useNavigate();
+  const formRef = useRef(null);
 
   const handleChange = (e) => {
-    setUser((prev) => {
-      return { ...prev, [e.target.name]: e.target.value };
-    });
+    const { name, value } = e.target;
+    setUser((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSeller = (e) => {
-    setUser((prev) => {
-      return { ...prev, isSeller: e.target.checked };
-    });
+    setUser((prev) => ({ ...prev, isSeller: e.target.checked }));
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const url = await upload(file);
-    try {
-      await newRequest.post("/auth/register", {
-        ...user,
-        img: url,
-      });
-      navigate("/")
-      alert("Register Successful");
-    } catch (err) {
-      console.log(err);
+    setFormSubmitted(true);
+    if (formRef.current.reportValidity()) {
+      const url = await upload(file);
+      try {
+        await newRequest.post("/auth/register", {
+          ...user,
+          img: url,
+        });
+        navigate("/");
+        alert("Register Successful");
+      } catch (err) {
+        console.log(err);
+      }
+    } else {
+      setFormSubmitted(false);
     }
   };
+
   return (
     <div className="register">
-      <form onSubmit={handleSubmit}>
+      <form ref={formRef} onSubmit={handleSubmit}>
         <div className="left">
           <h1>Create a new account</h1>
-          <label htmlFor="">Username</label>
+          <label htmlFor="username">Username</label>
           <Input
             name="username"
             type="text"
-            placeholder=" YourName"
+            placeholder="YourName"
             onChange={handleChange}
+            required
           />
-          <label htmlFor="">Email</label>
+          <label htmlFor="email">Email</label>
           <Input
             name="email"
             type="email"
             placeholder="youremail@email.com"
             onChange={handleChange}
+            required
           />
-          <label htmlFor="">Password</label>
-          <Input name="password" type="password" placeholder="sample@1345" onChange={handleChange} />
-          <label htmlFor="">Profile Picture</label>
-          <Input type="file" onChange={(e) => setFile(e.target.files[0])} />
-          <label htmlFor="">Country</label>
+          <label htmlFor="password">Password</label>
+          <Input
+            name="password"
+            type="password"
+            placeholder="sample@1345"
+            onChange={handleChange}
+            required
+          />
+          <label htmlFor="file">Profile Picture</label>
+          <Input
+            type="file"
+            onChange={(e) => setFile(e.target.files[0])}
+            required
+          />
+          <label htmlFor="country">Country</label>
           <Input
             name="country"
             type="text"
             placeholder="India"
             onChange={handleChange}
+            required
           />
-          
         </div>
         <div className="right">
           <div className="toggle">
-            <label htmlFor="">Activate Your seller account</label>
+            <label htmlFor="isSeller">Activate Your seller account</label>
             <label className="switch">
-              <Input type="checkbox" onChange={handleSeller} />
+              <Input
+                name="isSeller"
+                type="checkbox"
+                onChange={handleSeller}
+              />
               <span className="slider round"></span>
             </label>
           </div>
-          <label htmlFor="">Phone Number</label>
+          <label htmlFor="phone">Phone Number</label>
           <Input
             name="phone"
             type="text"
             placeholder="+91 999 999 9999"
             onChange={handleChange}
           />
-          <label htmlFor="">Description</label>
-          <textarea
+          <label htmlFor="desc">Description</label>
+          <textarea 
             placeholder="A short description of yourself"
             name="desc"
-            id=""
             cols="30"
             rows="10"
             onChange={handleChange}
           ></textarea>
-          <button type="submit">Register</button>
+          <button type="submit" disabled={formSubmitted}>
+            {formSubmitted ? "Submitting..." : "Register"}
+          </button>
         </div>
       </form>
     </div>

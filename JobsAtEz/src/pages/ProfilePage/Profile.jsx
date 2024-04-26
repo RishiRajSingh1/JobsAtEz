@@ -1,5 +1,7 @@
 import "./Profile.scss";
 import React, { useEffect, useState } from 'react';
+import {Button} from "@/components/ui/button"
+
 
 const Profile = () => {
   const seller = false;
@@ -11,7 +13,6 @@ const Profile = () => {
         const userData = localStorage.getItem("currentUser");
         const parsedData = JSON.parse(userData);
         setData(parsedData);
-        console.log(parsedData);
       } catch (error) {
         console.error("Error fetching gig data:", error);
       }
@@ -22,11 +23,11 @@ const Profile = () => {
   return (
     <>
       <div className="profile">
+        <div className="right">
         <div className="left">
           <p>Profile Picture</p>
-          <img src={data.img} alt="" />
+          <img src={data.img} alt="./images/noprofile.png" />
         </div>
-        <div className="right">
           <h1>Profile Information</h1>
           <table>
             <tbody>
@@ -51,16 +52,13 @@ const Profile = () => {
                 <td>Last Updated At:</td>
                 <td>{data.updatedAt ? data.updatedAt.split("T")[0] : "N/A"}</td>
               </tr>
+              <tr>
+                <td>Profile Status:</td>
+                <td>{data.isSeller ? "Seller" : "Buyer"}</td>
+              </tr>
             </tbody>
           </table>
-          {seller ? (
-            <h1>Profile Status: You Are A Seller</h1>
-          ) : (
-            <div>
-              <h1>Profile Status: You Are A Buyer</h1>
-              <button>Become a Seller</button>
-            </div>
-          )}
+          <button>Update Profile</button>
         </div>
       </div>
     </>
