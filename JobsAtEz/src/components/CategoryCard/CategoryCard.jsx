@@ -11,7 +11,7 @@ const CategoryCard = ({ item }) => {
   };
 
   return (
-    <div className="container" onClick={handleSubmit}>
+    <div className="categoryCard" onClick={handleSubmit}>
       <img src={item.imageUrl} alt={item.name} />
       <h3>{item.name}</h3> 
     </div>

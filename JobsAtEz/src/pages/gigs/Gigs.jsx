@@ -62,7 +62,6 @@ function Gigs() {
       <div className="box">
         <div className="header">
           <h1>Get The Best Out Of Best</h1>
-          <img src="/images/Logo.png" alt="" />
         </div>
         <p>Hire the best freelancer for your project, across the globe.</p>
         <div className="menu">

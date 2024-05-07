@@ -1,42 +1,47 @@
-.Home{
+.Home {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    .btn{
-        margin-top: 3%;
-        border-radius: 30px;
-        width: 242px;
-        height: 76px;
-        color: white;
-        background-color:  #1E88E5;
-        cursor: pointer;
+  
+    .btn {
+      margin-top: 3%;
+      border-radius: 100px;
+      width: 242px;
+      height: 76px;
+      color: white;
+      background-color: #1e88e5;
+      cursor: pointer;
     }
-}
-.Banner{
+  }
+  
+  .Banner {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-.category{
-    
+  }
+  
+  .category {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    .categorycard{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 2rem;
+  
+    .categorycard {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
     }
-    h1{
+  
+    h1 {
       margin: 40px;
-        font-size: 56px;
-        span{
-            color: #1E88E5;
-        }
+      font-size: 56px;
+      
+      span {
+        color: #1e88e5;
+      }
     }
-}
+  }
+  

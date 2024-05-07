@@ -114,7 +114,7 @@ function Register() {
             onChange={handleChange}
           />
           <label htmlFor="desc">Description</label>
-          <textarea 
+          <textarea style={{height: "100px"}}
             placeholder="A short description of yourself"
             name="desc"
             cols="30"

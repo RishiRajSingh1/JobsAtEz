@@ -1,13 +1,30 @@
 import React from 'react'
 import './Footer.scss'
 import { Link } from 'react-router-dom'
+import { TypewriterEffectSmooth } from '../ui/typewriter-effect'
+import Logo from "../../utils/Logo"
 
 export const Footer = () => {
+  const words = [
+    {
+      text: "Jobs",
+    },
+    {
+      text: "At",
+    },
+    {
+      text: "Ez...",
+      className: "text-blue-500 dark:text-blue-500",
+    },
+  ];
+  
   return (
     <>
      <div className='Footer'>
         <div className="sec1">
-            <img src="./images/Logo.png" alt="" />
+            <img className='h-20 w-20' src="./images/Logo.png" alt="" />
+            <Logo />
+            <h1 style={{fontSize:"30px"}}>Jobs At <span style={{color:"blue"}}>Ez</span></h1>
             <Link>Powerful Freelance Marketplace System with ability to change the Users (Freelancers & Clients)</Link>
             <div className="social"></div>
         </div>

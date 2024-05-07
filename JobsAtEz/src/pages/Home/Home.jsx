@@ -6,8 +6,9 @@ import About from '../../components/About/About';
 import CategoryCard from '../../components/CategoryCard/CategoryCard';
 import { Footer } from '../../components/Footer/Footer';
 import Subscribe from '../../components/NewsSubscription/Subscribe';
-import categories from "../../data.json";
+import categories from "../../data/data.json";
 import { Link } from 'react-router-dom';
+// import { HoverEffect } from "../../components/ui/card-hover-effect";
 
 const Home = () => {
   const [expanded, setExpanded] = useState(false);

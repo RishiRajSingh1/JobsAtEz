@@ -14,10 +14,12 @@ import Success from './pages/success/Success'
 import Terms from './pages/TermsAndConditions/Terms'
 import Message from './pages/message/Message'
 import Messages from './pages/messages/Messages'
-import Navbar from './components/Navbar/Navbar'
 import Profile from './pages/ProfilePage/Profile'
+import Navbar from './components/Navbar/Navbar'
 import { ModeToggle } from './components/ThemeToggleButton/ToggleButton'
 import { Footer } from './components/Footer/Footer'
+import Logo from "./utils/Logo"
+import AboutPage from './pages/AboutPage/AboutPage'
 
 // import Carousel from './components/Slider/Carousel'
 
@@ -47,6 +49,8 @@ function App() {
         <Route path='/message/:id' element={<Message/>}/>
         <Route path='/messages' element={<Messages/>}/> 
         <Route path='profile' element={<Profile/>}/>
+        <Route path='/about' element={<AboutPage/>}/>
+        <Route path='exp' element={<Logo/>}/>
       </Routes>
       {/* <Footer/> */}
     </Router>
