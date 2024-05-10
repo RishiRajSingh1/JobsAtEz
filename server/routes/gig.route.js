@@ -4,6 +4,7 @@ import {
   deleteGig,
   getGig,
   getGigs,
+  getGigsByUser,
   searchGigs
 } from "../controllers/gig.controller.js";
 import { verifyToken } from "../middleware/jwt.js";
@@ -15,6 +16,7 @@ router.delete("/:id", verifyToken, deleteGig);
 router.get("/single/:gigId", getGig);
 router.get("/", getGigs);
 router.get("/search", searchGigs);
+router.get("/owner/:userId", verifyToken, getGigsByUser);
 
 
 export default router;

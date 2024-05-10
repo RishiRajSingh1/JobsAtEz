@@ -94,4 +94,20 @@ export const searchGigs = async (req, res, next) => {
   }
 };
 
+export const getGigsByUser = async (req, res, next) => {
+  try {
+    const gig = await Gig.find({ userId: req.params.userId });
+    if (!gig) {
+      return next(createError(404, "Gig not found!"));
+    }
+    
+    res.status(200).send(gig);
+  
+  } catch (error) {
+    next(error);
+  }
+};
+
+
+
 

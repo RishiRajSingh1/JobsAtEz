@@ -14,7 +14,7 @@ function MyGigs() {
   const { isLoading, error, data } = useQuery({
     queryKey: ["myGigs"],
     queryFn: () =>
-      newRequest.get(`/gigs?userId=${currentUser._id}`).then((res) => {
+      newRequest.get(`/gigs/owner/${currentUser._id}`).then((res) => {
         return res.data;
       }),
   });
@@ -35,7 +35,7 @@ function MyGigs() {
   return (
     <div className="myGigs">
       {isLoading ? (
-        <ButtonLoading/>
+        <ButtonLoading />
       ) : error ? (
         "error"
       ) : (
@@ -49,32 +49,36 @@ function MyGigs() {
             )}
           </div>
           <table>
-            <tr>
-              <th>Image</th>
-              <th>Title</th>
-              <th>Price</th>
-              <th>Sales</th>
-              <th>Action</th>
-            </tr>
-            {data.map((gig) => (
-              <tr key={gig._id}>
-                <td>
-                  <img className="image" src={gig.cover} alt="" />
-                </td>
-                <td>{gig.title}</td>
-                <td>{gig.price}</td>
-                <td>{gig.sales}</td>
-                <td>
-                  <img
-                    className="delete"
-                    src="/images/delete.png"
-                    alt=""
-                    style={{ cursor: "pointer" ,width:"20px",height:"20px"}}
-                    onClick={() => handleDelete(gig._id)}
-                  />
-                </td>
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Sales</th>
+                <th>Action</th>
               </tr>
-            ))}
+            </thead>
+            <tbody>
+              {data.map((gig) => (
+                <tr key={gig._id}>
+                  <td>
+                    <img className="image" src={gig.cover} alt="" />
+                  </td>
+                  <td>{gig.title}</td>
+                  <td>{gig.price}</td>
+                  <td>{gig.sales}</td>
+                  <td>
+                    <img
+                      className="delete"
+                      src="/images/delete.png"
+                      alt=""
+                      style={{ cursor: "pointer", width: "20px", height: "20px" }}
+                      onClick={() => handleDelete(gig._id)}
+                    />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
           </table>
         </div>
       )}

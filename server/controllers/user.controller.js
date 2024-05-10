@@ -1,4 +1,3 @@
-// controllers/user.controller.js
 import User from "../models/user.model.js";
 import createError from "../utils/createError.js";
 
@@ -14,7 +13,6 @@ export const deleteUser = async (req, res, next) => {
       return next(createError(403, "You can delete only your account!"));
     }
 
-    // Soft delete the user by marking it as inactive
     user.isActive = false;
     await user.save();
 
@@ -39,27 +37,5 @@ export const getUser = async (req, res, next) => {
     res.status(200).send(user);
   } catch (error) {
     next(error);
-  }
-};
-export const updateUser = async (req, res) => {
-  const { id } = req.params;
-  const { username, email, password, img, country, phone, desc, isSeller, isActive } = req.body;
-
-  try {
-    const updatedUser = await User.findByIdAndUpdate(id, {
-      username,
-      email,
-      password,
-      img,
-      country,
-      phone,
-      desc,
-      isSeller,
-      isActive,
-    }, { new: true });
-
-    res.status(200).json(updatedUser);
-  } catch (error) {
-    res.status(500).json({ message: 'Could not update user data', error: error.message });
   }
 };

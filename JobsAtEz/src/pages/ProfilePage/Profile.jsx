@@ -58,7 +58,6 @@ const Profile = () => {
               </tr>
             </tbody>
           </table>
-          <button>Update Profile</button>
         </div>
       </div>
     </>

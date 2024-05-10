@@ -98,7 +98,7 @@ function Register() {
           <div className="toggle">
             <label htmlFor="isSeller">Activate Your seller account</label>
             <label className="switch">
-              <Input
+              <input
                 name="isSeller"
                 type="checkbox"
                 onChange={handleSeller}

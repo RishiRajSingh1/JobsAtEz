@@ -2,9 +2,8 @@ import "./GigCard.scss";
 import { Link } from "react-router-dom";
 import { useQuery } from "react-query";
 import newRequest from "../../utils/newRequest";
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import { ButtonLoading } from "../Loading/Loading";
-
 import * as React from "react";
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
 
@@ -16,38 +15,29 @@ export default function GigCard({ item }) {
         return res.data;
       }),
   });
+
   const generateStars = () => {
     const stars = [];
     const starRating = Math.round(item.totalStars / item.starNumber);
 
     for (let i = 0; i < 5; i++) {
-      if (i < starRating) {
-        stars.push(
-          <img
-            key={i}
-            src="./images/star.png"
-            alt="Filled Star"
-            className="w-4 h-4"
-          />
-        );
-      } else {
-        stars.push(
-          <img
-            key={i}
-            src="./images/starempty.png"
-            alt="Empty Star"
-            className="w-4 h-4"
-          />
-        );
-      }
+      stars.push(
+        <img
+          key={i}
+          src={i < starRating ? "./images/star.png" : "./images/starempty.png"}
+          alt={i < starRating ? "Filled Star" : "Empty Star"}
+          className="w-4 h-4"
+        />
+      );
     }
 
     return stars;
   };
+
   return (
     <Link to={`/gig/${item._id}`} className="link">
-      <CardContainer className="inter-var ">
-        <CardBody className="bg-gray-50 relative group/card hover:shadow-2xl hover:shadow-emerald-500/10 dark:bg-black dark:border-white/20 border-black/10 w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
+      <CardContainer className="flex flex-wrap">
+        <CardBody className="group card hover:shadow-2xl hover:shadow-emerald-500/10 dark:bg-black dark:border-white/20 border-black/10 w-auto sm:w-[30rem] h-auto w-[20%] rounded-xl p-6 border">
           <CardItem
             translateZ="50"
             className="text-xl font-bold text-neutral-600 dark:text-white giginfo"
@@ -61,7 +51,7 @@ export default function GigCard({ item }) {
                 <img
                   src={data.img || "/images/noprofile.png"}
                   alt=""
-                  className="w-8 h-8 rounded-full object-cover"
+                  className="w-6 h-6 rounded-full object-cover"
                 />
                 <span>{data.username}</span>
               </div>
@@ -83,14 +73,14 @@ export default function GigCard({ item }) {
           </CardItem>
           <div className="flex justify-between items-center mt-5">
             <CardItem>
-              <div className="star flex items-center gap-2">
-                {generateStars()}
-              </div>
+              <div className="flex items-center gap-2">{generateStars()}</div>
             </CardItem>
             <CardItem>
-              <div className="price flex items-center">
+              <div className="flex items-center">
                 <h2 className="text-neutral-600 dark:text-white">STARTING FROM :</h2>
-                <h2 className="ml-1 text-2xl font-bold text-amber-400 dark:text-amber-400">₹ {item.price}</h2>
+                <h2 className="ml-1 text-2xl font-bold text-amber-400 dark:text-amber-400">
+                  ₹ {item.price}
+                </h2>
               </div>
             </CardItem>
             <CardItem
@@ -106,4 +96,3 @@ export default function GigCard({ item }) {
     </Link>
   );
 }
-

@@ -71,9 +71,8 @@ const Navbar = () => {
         </div>
         <div className="links">
           <Link to="/about">About</Link>
-          <span>Explore</span>
-          <span>English</span>
-          {!currentUser?.isSeller && <span>Become a Seller</span>}
+          <Link to="/gigs">Explore</Link>
+          {/* {!currentUser?.isSeller && <span>Become a Seller</span>} */}
           {currentUser ? (
             <div className="user" onClick={() => setOpen(!open)}>
               <img
