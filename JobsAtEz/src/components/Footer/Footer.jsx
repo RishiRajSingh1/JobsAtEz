@@ -17,14 +17,16 @@ export const Footer = () => {
       className: "text-blue-500 dark:text-blue-500",
     },
   ];
+
+  
   
   return (
     <>
      <div className='Footer'>
         <div className="sec1">
             <img className='h-20 w-20' src="./images/Logo.png" alt="" />
-            <Logo />
-            <h1 style={{fontSize:"30px"}}>Jobs At <span style={{color:"blue"}}>Ez</span></h1>
+            <div><TypewriterEffectSmooth words={words} className='text-2xl'/></div>
+            {/* <h1 style={{fontSize:"30px"}}>Jobs At <span style={{color:"blue"}}>Ez</span></h1> */}
             <Link>Powerful Freelance Marketplace System with ability to change the Users (Freelancers & Clients)</Link>
             <div className="social"></div>
         </div>

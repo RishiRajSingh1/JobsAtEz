@@ -17,6 +17,7 @@ export const register = async (req, res, next) => {
     next(err);
   }
 };
+
 export const login = async (req, res, next) => {
   try {
     const user = await User.findOne({ username: req.body.username });
@@ -39,15 +40,18 @@ export const login = async (req, res, next) => {
         id: user._id,
         isSeller: user.isSeller,
       },
-      process.env.JWT_KEY
+      process.env.JWT_KEY,
+      { expiresIn: "1h" } // Set expiration time (e.g., 1 hour)
     );
 
     const { password, ...info } = user._doc;
+
     res
       .cookie("accessToken", token, {
         httpOnly: true,
-        sameSite: "none", 
-        secure: true,     
+        sameSite: "none",
+        secure: true,
+        maxAge: 3600000, // Expiration time in milliseconds (1 hour)
       })
       .status(200)
       .send(info);
