@@ -25,7 +25,7 @@ export const Footer = () => {
      <div className='Footer'>
         <div className="sec1">
             <img className='h-20 w-20' src="./images/Logo.png" alt="" />
-            <div><TypewriterEffectSmooth words={words} className='text-2xl'/></div>
+            <div><h1 className='text-2xl'>Jobs At Ez</h1></div>
             {/* <h1 style={{fontSize:"30px"}}>Jobs At <span style={{color:"blue"}}>Ez</span></h1> */}
             <Link>Powerful Freelance Marketplace System with ability to change the Users (Freelancers & Clients)</Link>
             <div className="social"></div>
