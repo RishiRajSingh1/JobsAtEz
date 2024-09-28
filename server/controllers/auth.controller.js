@@ -51,7 +51,6 @@ export const login = async (req, res, next) => {
         httpOnly: true,
         sameSite: "none",
         secure: true,
-        maxAge: 3600000, // Expiration time in milliseconds (1 hour)
       })
       .status(200)
       .send(info);
